@@ -20,6 +20,10 @@ def main():
     if not 1 <= len(ENTRY) <= 200:
         print("entry must be 1 to 200 characters", file=sys.stderr)
         return 1
+    if "\n" in ENTRY or "\r" in ENTRY:
+        print("entry must be a single line", file=sys.stderr)
+        return 1
+    print("entry OK:", len(ENTRY), "characters")
     return 0
 
 
